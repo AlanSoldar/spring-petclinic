@@ -13,31 +13,35 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.springframework.samples.dellemployees.employee;
+package org.springframework.samples.petclinic.employee;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Map;
 
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 
 /**
- * Simple domain object representing a list of veterinarians. Mostly here to be used for the 'vets' {@link
- * org.springframework.web.servlet.view.xml.MarshallingView}.
- *
+ * @author Juergen Hoeller
+ * @author Mark Fisher
+ * @author Ken Krebs
  * @author Arjen Poutsma
  */
-@XmlRootElement
-public class Employees {
+@Controller
+class EmployeeController {
 
-    private List<Employee> vets;
+	private final EmployeeRepository employeeRepo;
 
-    @XmlElement
-    public List<Employee> getEmployeeList() {
-        if (vets == null) {
-            vets = new ArrayList<>();
-        }
-        return vets;
+    public EmployeeController(EmployeeRepository clinicService) {
+        this.employeeRepo = clinicService;
     }
+
+    @GetMapping("/employee")
+    public String showVetList(Map<String, Object> model) {
+  
+        model.put("employeeRepo", employeeRepo.findAll());
+        return "employees/employeeList";
+    }
+
+
 
 }

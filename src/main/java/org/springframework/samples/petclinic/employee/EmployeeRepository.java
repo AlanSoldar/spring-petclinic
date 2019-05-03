@@ -13,14 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.springframework.samples.dellemployees.employee;
+package org.springframework.samples.petclinic.employee;
 
 import java.util.Collection;
 
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.dao.DataAccessException;
 import org.springframework.data.repository.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
 /**
  * Repository class for <code>Vet</code> domain objects All method names are compliant with Spring Data naming
@@ -34,13 +32,7 @@ import org.springframework.transaction.annotation.Transactional;
  */
 public interface EmployeeRepository extends Repository<Employee, Integer> {
 
-    /**
-     * Retrieve all <code>Employee</code>s from the data store.
-     *
-     * @return a <code>Collection</code> of <code>Employee</code>s
-     */
-    @Transactional(readOnly = true)
-    @Cacheable("employee")
+    
     Collection<Employee> findAll() throws DataAccessException;
 
 

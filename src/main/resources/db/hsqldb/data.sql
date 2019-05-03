@@ -52,6 +52,6 @@ INSERT INTO visits VALUES (2, 8, '2013-01-02', 'rabies shot');
 INSERT INTO visits VALUES (3, 8, '2013-01-03', 'neutered');
 INSERT INTO visits VALUES (4, 7, '2013-01-04', 'spayed');
 
-INSERT INTO employees VALUES (1, 'Alan', 'Soledar');
-INSERT INTO employees VALUES (2, 'Leonardo', 'Augusto');
-INSERT INTO employees VALUES (3, 'Murilo', 'Bauer');
+INSERT INTO employees VALUES (27, 'Alan', 'Soledar');
+INSERT INTO employees VALUES (28, 'Leonardo', 'Augusto');
+INSERT INTO employees VALUES (29, 'Murilo', 'Bauer');

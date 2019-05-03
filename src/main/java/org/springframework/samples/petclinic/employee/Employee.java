@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.springframework.samples.dellemployees.employee;
+package org.springframework.samples.petclinic.employee;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -46,7 +46,12 @@ import org.springframework.samples.petclinic.owner.Pet;
 @Entity
 @Table(name = "employee")
 public class Employee extends Person {
-    @Column(name = "address")
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	@Column(name = "address")
     @NotEmpty
     private String address;
 
