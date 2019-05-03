@@ -17,10 +17,7 @@
       <tr th:each="employee : ${employees.employeeList}">
         <td th:text="${employee.firstName + ' ' + employee.lastName}"></td>
         
-        <!--<td><span th:each="specialty : ${employee.specialties}"
-          th:text="${specialty.name + ' '}" /> <span
-          th:if="${vet.nrOfSpecialties == 0}">none</span></td>-->
-      </tr>
+         </tr>
     </tbody>
   </table>
 </body>

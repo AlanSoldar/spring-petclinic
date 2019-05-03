@@ -20,7 +20,7 @@ CREATE TABLE employees (
   first_name VARCHAR(30),
   last_name  VARCHAR(30)
 );
-CREATE INDEX employees_last_name ON employee (last_name);
+CREATE INDEX employees_last_name ON employees (last_name);
 
 CREATE TABLE specialties (
   id   INTEGER IDENTITY PRIMARY KEY,

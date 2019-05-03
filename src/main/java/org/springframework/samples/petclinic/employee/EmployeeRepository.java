@@ -17,8 +17,10 @@ package org.springframework.samples.petclinic.employee;
 
 import java.util.Collection;
 
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.dao.DataAccessException;
 import org.springframework.data.repository.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * Repository class for <code>Vet</code> domain objects All method names are compliant with Spring Data naming
@@ -32,7 +34,7 @@ import org.springframework.data.repository.Repository;
  */
 public interface EmployeeRepository extends Repository<Employee, Integer> {
 
-    
+
     Collection<Employee> findAll() throws DataAccessException;
 
 

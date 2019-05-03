@@ -17,8 +17,10 @@ package org.springframework.samples.petclinic.employee;
 
 import java.util.Map;
 
+import org.springframework.samples.petclinic.vet.Vets;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * @author Juergen Hoeller
@@ -38,9 +40,22 @@ class EmployeeController {
     @GetMapping("/employee")
     public String showVetList(Map<String, Object> model) {
   
-        model.put("employeeRepo", employeeRepo.findAll());
+    	
+    	Employees employees = new Employees();
+        employees.getEmployeeList().addAll(this.employeeRepo.findAll());
+        model.put("employees", employees);
         return "employees/employeeList";
     }
+    
+    @GetMapping({ "/employees" })
+    public @ResponseBody Employees showResourcesVetList() {
+        // Here we are returning an object of type 'Vets' rather than a collection of Vet
+        // objects so it is simpler for JSon/Object mapping
+        Employees employees = new Employees();
+        employees.getEmployeeList().addAll(this.employeeRepo.findAll());
+        return employees;
+    }
+
 
 
 
