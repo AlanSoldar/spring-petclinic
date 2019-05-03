@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.springframework.sample.dellemployees.employee;
+package org.springframework.samples.dellemployees.employee;
 
 import java.util.ArrayList;
 import java.util.Collections;
